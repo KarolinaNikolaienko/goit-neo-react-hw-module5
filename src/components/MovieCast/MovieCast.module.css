@@ -1,0 +1,13 @@
+.castImage {
+    display: block;
+    background-color: lightgrey;
+}
+
+.castInfo {
+    padding: 0;
+    margin: 0;
+}
+
+.castItem {
+    margin-bottom: 30px;
+}

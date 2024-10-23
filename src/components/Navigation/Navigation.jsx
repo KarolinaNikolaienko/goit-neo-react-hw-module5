@@ -8,15 +8,17 @@ const generateIsActiveClass = ({ isActive }) => {
 
 const Navigation = () => {
   return (
-    <header className={css.header}>
-      <nav className={css.navigation}>
-        <NavLink className={generateIsActiveClass} to="/">
-          Home
-        </NavLink>
-        <NavLink className={generateIsActiveClass} to="/movies">
-          Movies
-        </NavLink>
-      </nav>
+    <header>
+      <div className={css.navigationBar}>
+        <nav className={css.navigation}>
+          <NavLink className={generateIsActiveClass} to="/">
+            Home
+          </NavLink>
+          <NavLink className={generateIsActiveClass} to="/movies">
+            Movies
+          </NavLink>
+        </nav>
+      </div>
     </header>
   );
 };
