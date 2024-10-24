@@ -8,13 +8,16 @@ const MovieReviews = () => {
   const [reviews, setReviews] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [message, setMessage] = useState(false);
 
   useEffect(() => {
     const getTrendingMovies = async () => {
       try {
         setLoading(true);
         setError(false);
+        setMessage(false);
         const results = await fetchMovieReviews(movieId);
+        if (!results || results.length === 0) setMessage(true);
         setReviews(results);
       } catch (error) {
         setError(error);
@@ -31,7 +34,8 @@ const MovieReviews = () => {
       <h3>Reviews</h3>
       {loading && <p>Loading...</p>}
       {error && <p>Something gone wrong</p>}
-      {reviews && reviews.length !== 0 ? (
+      {message && <p>We don&apos;t have any reviews for this movie</p>}
+      {reviews && reviews.length !== 0 && (
         <ul className={css.reviewsList}>
           {reviews.map(review => (
             <li className={css.reviewsItem} key={review.id}>
@@ -40,8 +44,6 @@ const MovieReviews = () => {
             </li>
           ))}
         </ul>
-      ) : (
-        <p>We don&apos;t have any reviews for this movie</p>
       )}
     </div>
   );
