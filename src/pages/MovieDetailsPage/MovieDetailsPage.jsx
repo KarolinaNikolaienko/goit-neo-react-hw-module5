@@ -1,5 +1,11 @@
 import css from './MovieDetailsPage.module.css';
-import { NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
+import {
+  NavLink,
+  Outlet,
+  useNavigate,
+  useParams,
+  useLocation,
+} from 'react-router-dom';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { fetchMovieDetails } from '../../api/movies-api';
 
@@ -10,6 +16,8 @@ const MovieDetailsPage = () => {
   const [error, setError] = useState(false);
 
   const navigate = useNavigate();
+
+  const location = useLocation();
   const backPath = useRef(location.state ?? '/');
 
   useEffect(() => {
@@ -46,6 +54,8 @@ const MovieDetailsPage = () => {
               className={css.poster}
               src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
               alt="Movie poster"
+              width="220px"
+              height="330px"
             />
             <div className={css.details}>
               <h1>{details.title}</h1>

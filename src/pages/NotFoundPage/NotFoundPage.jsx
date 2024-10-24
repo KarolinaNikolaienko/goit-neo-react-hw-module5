@@ -1,7 +1,7 @@
-import css from './NotFoundPage.module.css';
+// import css from './NotFoundPage.module.css';
 
 const NotFoundPage = () => {
-  return <div>NotFoundPage</div>;
+  return <h1>404: Not Found</h1>;
 };
 
 export default NotFoundPage;

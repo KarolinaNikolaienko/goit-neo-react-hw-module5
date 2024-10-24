@@ -2,11 +2,6 @@
     margin-bottom: 20px;
 }
 
-.poster {
-    height: 330px;
-    width: auto;
-}
-
 .detailsContainer {
     display: flex;
     align-items: center;
@@ -16,6 +11,7 @@
 
 .genres {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
 }

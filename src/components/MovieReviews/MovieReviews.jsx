@@ -29,10 +29,9 @@ const MovieReviews = () => {
   return (
     <div className={css.reviews}>
       <h3>Reviews</h3>
-      {console.log(reviews)}
       {loading && <p>Loading...</p>}
       {error && <p>Something gone wrong</p>}
-      {reviews ? (
+      {reviews && reviews.length !== 0 ? (
         <ul className={css.reviewsList}>
           {reviews.map(review => (
             <li className={css.reviewsItem} key={review.id}>
