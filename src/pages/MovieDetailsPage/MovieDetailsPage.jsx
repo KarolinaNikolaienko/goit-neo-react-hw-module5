@@ -58,7 +58,9 @@ const MovieDetailsPage = () => {
               height="330px"
             />
             <div className={css.details}>
-              <h1>{details.title}</h1>
+              <h1>
+                {details.title} ({new Date(details.release_date).getFullYear()})
+              </h1>
               <p>Rating: {details.vote_average}</p>
               <h2>Overview</h2>
               <p>{details.overview}</p>
